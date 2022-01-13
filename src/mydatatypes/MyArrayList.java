@@ -1,11 +1,12 @@
 package mydatatypes;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
-public class MyArrayList<E> {
+public class MyArrayList<E> implements Iterable<E>{
     private final int  DEFAULT_CAPACITY = 10;
-    private int size;
     private E[] array;
+    private int size;
 
     public MyArrayList() {
         array = (E[]) new Object[DEFAULT_CAPACITY];
@@ -13,16 +14,15 @@ public class MyArrayList<E> {
     }
 
     public MyArrayList(int size) {
-        this.size = size;
         array = (E[]) new Object[size];
+        this.size = 0;
     }
 
     public void add(E e) {
         if(array.length - 1 == size){
             grow( (int) Math.round(size * 1.5));
         }
-        array[size] = e;
-        size++;
+        array[size++] = e;
     }
 
     public Object get(int index) {
@@ -53,7 +53,25 @@ public class MyArrayList<E> {
             return Arrays.toString(arrayToPrint);
         }
         return Arrays.toString(array);
+    }
 
 
+    @Override
+    public Iterator<E> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<E> {
+        private int currentIndex;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < size;
+        }
+
+        @Override
+        public E next() {
+            return array[currentIndex++];
+        }
     }
 }
