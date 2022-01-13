@@ -1,4 +1,4 @@
-package GeekBrains.lesson5;
+package geekbrains.lesson5;
 
 import java.sql.SQLOutput;
 import java.util.*;

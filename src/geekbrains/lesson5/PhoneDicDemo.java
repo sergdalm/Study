@@ -1,4 +1,4 @@
-package GeekBrains.lesson5;
+package geekbrains.lesson5;
 
 public class PhoneDicDemo {
     public static void main(String[] args) {
