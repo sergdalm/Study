@@ -9,5 +9,6 @@ public class Demo {
         System.out.println(Likes.whoLikesIt("Alish", "Sandra", "Karen", "Nick"));
 
         System.out.println(PinCode.validatePin("4494"));
+
     }
 }

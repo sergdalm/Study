@@ -7,20 +7,16 @@ public class PinCode {
             return false;
 
         try{
-            for(int i = 0; i < length; i++)
-                //if((Integer.valueOf(pin.charAt(i)) < 0))
-                if((Integer.valueOf(pin.charAt(i))) < 0 || (Integer.valueOf(pin.charAt(i))) > 10){
-                    System.out.println(pin.charAt(i));
-                    System.out.println(Integer.valueOf(pin.charAt(i)));
+            for(int i = 0; i < length; i++){
+                String s = pin.substring(i, i+1);
+                if((Integer.valueOf(s)) < 0 || (Integer.valueOf(s)) > 10){
                     return false;
                 }
-
+            }
         }
         catch(Exception exc) {
-            System.out.println("Exception!");
             return false;
         }
-
         return true;
     }
 }
