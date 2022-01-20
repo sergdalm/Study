@@ -37,8 +37,8 @@ class Methods {
             int n = (int) itr.next();
             if(!list.contains(n))
                 count++;
-
         }
+        return 0;
     }
 
 
