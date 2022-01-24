@@ -22,7 +22,7 @@ public class StreamDemo {
 
         System.out.print("Minimum value (my version): ");
         myList.stream()
-                .min(Integer::compare)
+                .reduce(Integer::min)
                 .ifPresent(System.out::print);
         System.out.println();
 

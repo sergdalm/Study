@@ -9,7 +9,7 @@ public class StreamDemo2 {
         List<Integer> myList =  Arrays.asList(7, 18, 10, 24, 17, 5);
 
         System.out.print("Product as Optional: ");
-        myList.stream()
+        myList.parallelStream()
                 .reduce((a,b) -> a * b)
                 .ifPresent(System.out::print);
         System.out.println();
