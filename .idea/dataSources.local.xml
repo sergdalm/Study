@@ -10,37 +10,21 @@
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node negative="1">
-            <node kind="database">
-              <name qname="books" />
-              <name qname="company_repository" />
-              <name qname="postgres" />
-              <node kind="schema" negative="1" />
-            </node>
-            <node kind="database" qname="book_repository" />
+          <node kind="database">
+            <name qname="company_repository" />
+            <name qname="postgres" />
+            <node kind="schema" negative="1" />
           </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>
     <data-source name="postgres@localhost" uuid="3e8e4bcd-4262-43e0-8c61-a5686bb166e5">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
-      <secret-storage>master_key</secret-storage>
       <schema-mapping />
     </data-source>
     <data-source name="connection-2_2" uuid="5a3af782-3196-4172-b5c4-ae41a6b5f7ca">
-      <database-info product="PostgreSQL" version="14.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.22" dbms="POSTGRES" exact-version="14.1" exact-driver-version="42.2">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>postgres</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="database" qname="@">
-            <node kind="schema" qname="@" />
-          </node>
-        </introspection-scope>
-      </schema-mapping>
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <schema-mapping />
     </data-source>
   </component>
 </project>
