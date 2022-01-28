@@ -2,6 +2,7 @@ package io;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class FileRunner {
     public static void main(String[] args) throws IOException {
@@ -20,7 +21,7 @@ public class FileRunner {
 
         File dir = new File("resources/test/dir");
         dir.mkdirs();
-        System.out.println("dir.list: " + dir.list());
+        System.out.println("dir.list: " + Arrays.toString(dir.list()));
 
     }
 }
