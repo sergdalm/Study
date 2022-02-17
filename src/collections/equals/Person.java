@@ -1,30 +1,19 @@
 package collections.equals;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Person implements Comparable<Person> {
+public class Person implements Comparable<Person>, Serializable {
     private int id;
     private String firstName;
-    private String lastName;
+    transient private String lastName;
+    public static final long serialVersionUID = 1L;
 
     public Person(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
 
     @Override
     public boolean equals(Object o) {
@@ -54,4 +43,17 @@ public class Person implements Comparable<Person> {
     public int compareTo(Person o) {
         return Integer.compare(id, o.id);
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
 }
