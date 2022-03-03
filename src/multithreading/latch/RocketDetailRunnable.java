@@ -16,10 +16,10 @@ public class RocketDetailRunnable implements Runnable{
         System.out.println("Готовится деталь " + rocketDetail);
         try {
             Thread.sleep(1000L);
+            System.out.println("Деталь готова " + rocketDetail);
+            countDownLatch.countDown();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Деталь готова " + rocketDetail);
-        countDownLatch.countDown();
     }
 }

@@ -1,4 +1,4 @@
-package multithreading.cuncurrent.pool;
+package multithreading.pool;
 
 import java.util.concurrent.*;
 
