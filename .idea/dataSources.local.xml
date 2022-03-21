@@ -30,14 +30,12 @@
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node negative="1">
-            <node kind="database" qname="book_repository">
-              <node kind="schema" qname="public" />
-            </node>
-            <node kind="database">
-              <name qname="company_repository" />
-              <name qname="postgres" />
-            </node>
+          <node kind="database">
+            <name qname="book_repository" />
+            <name qname="company_repository" />
+            <name qname="postgres" />
+            <name qname="flight_repository" />
+            <node kind="schema" qname="public" />
           </node>
         </introspection-scope>
       </schema-mapping>
