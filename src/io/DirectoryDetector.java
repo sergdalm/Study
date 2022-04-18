@@ -12,7 +12,10 @@ import java.util.*;
  *
  */
 public class DirectoryDetector {
-    final static String directoryName = "C:/Users/Hello/Desktop/관리팀";
+    static String documentsFolder = "C:/Users/Hello/Documents";
+    static String helloFolder = "C:/Users/Hello";
+    static String administrationFolder = "C:/Users/Hello/Desktop/관리팀";
+    final static String directoryName = documentsFolder;
 
     public static void main(String[] args) {
         File directory = new File(directoryName);
@@ -38,19 +41,28 @@ public class DirectoryDetector {
 
     // Calculate folder size
     public static long folderSize(File directory) {
-        long length = 0;
+        long length = 0L;
+
         if(directory.getName().endsWith(".lnk")) {
-            return 0L;
+            return length;
         }
-        if(directory.isFile()) {
+        if(directory.getName().startsWith(".")) {
+            return length;
+        }
+        if(!directory.isDirectory()) {
             return directory.length();
         }
-        for (File file : Objects.requireNonNull(directory.listFiles())) {
-            if (file.isFile())
-                length += file.length();
-            else
-                length += folderSize(file);
+        try {
+            for (File file : Objects.requireNonNull(directory.listFiles())) {
+                if (file.isFile())
+                    length += file.length();
+                else
+                    length += folderSize(file);
+            }
+        } catch (NullPointerException exc) {
+            // return 0L
         }
+
         return length;
     }
 }
